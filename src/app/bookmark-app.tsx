@@ -206,8 +206,8 @@ export default function BookmarkApp() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-950 text-slate-100">
-        <div className="rounded-xl border border-slate-800 bg-slate-900/50 px-6 py-4 text-sm text-slate-300 shadow-lg">
+      <div className="flex min-h-screen items-center justify-center text-white">
+        <div className="rounded-2xl border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-6 py-4 text-sm text-slate-200 shadow-lg shadow-cyan-500/10">
           Connecting to Smart Bookmark...
         </div>
       </div>
@@ -216,13 +216,13 @@ export default function BookmarkApp() {
 
   if (!session || !user) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100">
-        <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-8 shadow-2xl shadow-slate-950/50">
+      <div className="flex min-h-screen items-center justify-center px-4 text-white">
+        <div className="w-full max-w-md rounded-2xl border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/10">
           <div className="mb-6 space-y-2">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-400">
               Smart Bookmark
             </p>
-            <h1 className="text-2xl font-semibold text-slate-50">
+            <h1 className="text-2xl font-semibold text-white">
               Sign in to your smart bookmarks
             </h1>
             <p className="text-sm text-slate-400">
@@ -238,9 +238,9 @@ export default function BookmarkApp() {
           <button
             type="button"
             onClick={handleSignIn}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-slate-50 px-4 py-2.5 text-sm font-medium text-slate-900 shadow-sm shadow-slate-900/40 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
           >
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded bg-white shadow-sm shadow-slate-900/30">
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded bg-white shadow-sm">
               <span className="text-xs">G</span>
             </span>
             <span>Continue with Google</span>
@@ -255,19 +255,19 @@ export default function BookmarkApp() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 px-4 py-6 text-slate-50">
-      <div className="mx-auto flex max-w-3xl flex-col gap-6">
-        <header className="flex flex-col gap-4 rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-slate-950 px-5 py-4 shadow-xl shadow-slate-950/60 sm:flex-row sm:items-center sm:justify-between">
+    <div className="min-h-screen px-4 py-8 text-white">
+      <div className="mx-auto flex max-w-4xl flex-col gap-6">
+        <header className="flex flex-col gap-4 rounded-2xl border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-6 py-5 shadow-xl shadow-cyan-500/10 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-              Smart Bookmark
+              SMART BOOKMARK
             </p>
-            <h1 className="mt-1 text-xl font-semibold text-slate-50">
+            <h1 className="mt-1 text-2xl font-semibold text-white">
               Your realtime bookmark inbox
             </h1>
             <p className="mt-1 text-xs text-slate-400">
               Signed in as{" "}
-              <span className="font-medium text-slate-200">
+              <span className="font-medium text-white">
                 {user.email}
               </span>
             </p>
@@ -275,20 +275,20 @@ export default function BookmarkApp() {
           <button
             type="button"
             onClick={handleSignOut}
-            className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-200 shadow-sm shadow-slate-950/50 transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            className="inline-flex items-center justify-center rounded-lg border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-4 py-2 text-xs font-medium text-white shadow-sm shadow-cyan-500/10 transition hover:bg-slate-800/60 hover:border-cyan-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
           >
             Sign out
           </button>
         </header>
 
-        <main className="flex flex-col gap-4">
-          <section className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-slate-950/50">
+        <main className="flex flex-col gap-6">
+          <section className="rounded-2xl border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl p-6 shadow-xl shadow-cyan-500/10">
             <form
               onSubmit={handleAddBookmark}
-              className="flex flex-col gap-3 sm:flex-row"
+              className="flex flex-col gap-4 sm:flex-row sm:items-end"
             >
-              <div className="flex-1 space-y-2">
-                <label className="block text-xs font-medium text-slate-300">
+              <div className="flex-1 space-y-2 min-w-0">
+                <label className="block text-xs font-medium text-white">
                   Title
                 </label>
                 <input
@@ -296,11 +296,11 @@ export default function BookmarkApp() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="What is this link?"
-                  className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-inner shadow-slate-950/60 outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/60"
+                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
                 />
               </div>
-              <div className="flex-1 space-y-2">
-                <label className="block text-xs font-medium text-slate-300">
+              <div className="flex-1 space-y-2 min-w-0">
+                <label className="block text-xs font-medium text-white">
                   URL
                 </label>
                 <input
@@ -308,14 +308,14 @@ export default function BookmarkApp() {
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder="https://example.com/article"
-                  className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-inner shadow-slate-950/60 outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/60"
+                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/60 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
                 />
               </div>
               <div className="flex items-end">
                 <button
                   type="submit"
                   disabled={saving}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-md shadow-sky-500/40 transition hover:bg-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:self-end"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-cyan-500/10 transition hover:bg-slate-800/60 hover:border-cyan-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {saving ? "Saving..." : "Add bookmark"}
                 </button>
@@ -326,45 +326,45 @@ export default function BookmarkApp() {
                 {error}
               </p>
             )}
-            <p className="mt-3 text-[11px] text-slate-500">
+            <p className="mt-4 text-[11px] text-slate-400">
               Bookmarks are private to your account. Open this app in another
               tab while logged in to see new items appear in real time.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-slate-950/50">
-            <div className="mb-2 flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-slate-100">
+          <section className="rounded-2xl border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl p-6 shadow-xl shadow-cyan-500/10">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-sm font-semibold text-white">
                 Your bookmarks
               </h2>
-              <span className="text-[11px] text-slate-500">
+              <span className="text-[11px] text-white">
                 {sortedBookmarks.length} saved
               </span>
             </div>
             {sortedBookmarks.length === 0 ? (
-              <p className="rounded-lg border border-dashed border-slate-700 bg-slate-900/70 px-3 py-4 text-xs text-slate-400">
+              <p className="rounded-lg border border-dashed border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl px-4 py-6 text-xs text-slate-400">
                 No bookmarks yet. Add your first link above to get started.
               </p>
             ) : (
-              <ul className="divide-y divide-slate-800 text-sm">
+              <ul className="divide-y divide-cyan-500/10 text-sm">
                 {sortedBookmarks.map((bookmark) => (
                   <li
                     key={bookmark.id}
-                    className="flex items-start justify-between gap-3 py-3"
+                    className="flex items-start gap-4 py-4 min-w-0"
                   >
-                    <div className="space-y-1">
-                      <p className="font-medium text-slate-50">
+                    <div className="flex-1 min-w-0 space-y-1.5">
+                      <p className="font-medium text-white break-words">
                         {bookmark.title}
                       </p>
                       <a
                         href={bookmark.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="block truncate text-xs text-sky-300 hover:text-sky-200"
+                        className="block text-xs text-cyan-300 hover:text-cyan-200 break-all"
                       >
                         {bookmark.url}
                       </a>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-[11px] text-slate-400">
                         Saved{" "}
                         {new Date(bookmark.created_at).toLocaleString()}
                       </p>
@@ -372,7 +372,7 @@ export default function BookmarkApp() {
                     <button
                       type="button"
                       onClick={() => handleDeleteBookmark(bookmark.id)}
-                      className="mt-1 inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-[11px] font-medium text-slate-300 shadow-sm shadow-slate-950/50 transition hover:bg-red-500/10 hover:text-red-200 hover:border-red-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                      className="flex-shrink-0 inline-flex items-center justify-center rounded-lg border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-3 py-1.5 text-[11px] font-medium text-white shadow-sm shadow-cyan-500/10 transition hover:bg-red-500/20 hover:text-red-200 hover:border-red-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70"
                     >
                       Delete
                     </button>
