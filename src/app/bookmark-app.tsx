@@ -296,7 +296,7 @@ export default function BookmarkApp() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="What is this link?"
-                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/40 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
+                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/80 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
                 />
               </div>
               <div className="flex-1 space-y-2 min-w-0">
@@ -308,7 +308,7 @@ export default function BookmarkApp() {
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder="https://example.com/article"
-                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/60 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
+                  className="w-full rounded-lg border border-cyan-500/30 bg-slate-900/80 backdrop-blur-xl px-4 py-2.5 text-sm text-white placeholder:text-slate-500 shadow-inner outline-none ring-0 transition focus:border-cyan-500/60 focus:ring-2 focus:ring-cyan-500/30"
                 />
               </div>
               <div className="flex items-end">
